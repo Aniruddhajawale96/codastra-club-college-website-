@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="CodAstra — A passionate programming club building cool experiences through code, hackathons, and innovation." />
+  <title>CodAstra — Programming Club</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Spline 3D Viewer -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.72/build/spline-viewer.js"></script>
+</head>
+
+<body>
+
+  <!-- Grid overlay background -->
+  <div class="grid-overlay"></div>
+
+  <!-- Full-page 3D cube canvas -->
+  <canvas id="cube-canvas"></canvas>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- ============================= NAVBAR ============================= -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <div class="logo-icon">C</div>
+      CodAstra
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero" data-section="hero" class="active">Home</a></li>
+      <li><a href="#about" data-section="about">About</a></li>
+      <li><a href="#events" data-section="events">Events</a></li>
+      <li><a href="#projects" data-section="projects">Projects</a></li>
+      <li><a href="#team" data-section="team">Team</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#join" class="btn btn-primary">Join Us</a>
+    </div>
+  </nav>
+
+  <!-- ============================= HERO ============================= -->
+  <section id="hero">
+    <div class="hero-content reveal">
+      <div class="hero-text-col">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          Programming Club — Open for All
+        </div>
+
+        <h1 class="hero-title">
+          We're Building<br>
+          <span class="gradient-text">Cool Experiences</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          CodAstra is a passionate programming club empowering developers through code, collaboration, and innovation.
+        </p>
+
+        <div class="hero-typing-wrapper">
+          <span id="hero-typing"></span><span class="cursor-blink">|</span>
+        </div>
+
+        <div class="category-tags">
+          <span>AI</span>
+          <span class="separator">\</span>
+          <span>WEB DEV</span>
+          <span class="separator">\</span>
+          <span>HACKATHONS</span>
+          <span class="separator">\</span>
+          <span>OPEN SOURCE</span>
+          <span class="separator">\</span>
+          <span>DSA</span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#join" class="btn btn-primary">Get Started</a>
+          <a href="#projects" class="btn btn-outline">Explore Projects</a>
+        </div>
+      </div>
+
+      <div class="hero-robot-col">
+        <iframe src="https://my.spline.design/genkubgreetingrobot-ahkyCIoTXrKWGn32zWcf1dg0/" frameborder="0"
+          width="100%" height="100%" allowtransparency="true" style="background: transparent;"></iframe>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================= ABOUT ============================= -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title reveal">About <span class="accent">CodAstra</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Empowering Future Developers Through Code & Innovation</p>
+      <div class="neon-divider reveal reveal-delay-1"></div>
+
+      <div class="about-content">
+        <div class="about-text reveal reveal-delay-2">
+          <p>CodAstra is a passionate programming club dedicated to empowering developers of all levels. We merge
+            collaborative energy with cutting-edge technology to build the next generation of skilled coders and
+            innovators.</p>
+          <p>Join us to learn, build, and innovate. Together, we forge a path of technological mastery through
+            hackathons, workshops, and hands-on projects — where legendary developers are born.</p>
+        </div>
+
+        <div class="stats-grid reveal reveal-delay-3">
+          <div class="stat-card">
+            <span class="stat-number" data-target="250" data-suffix="+">0+</span>
+            <span class="stat-label">Active Members</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="50" data-suffix="+">0+</span>
+            <span class="stat-label">Workshops</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="100" data-suffix="+">0+</span>
+            <span class="stat-label">Projects Built</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="30" data-suffix="+">0+</span>
+            <span class="stat-label">Hackathons</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- What We Offer -->
+      <h2 class="section-title reveal" style="margin-top: 100px;">What We <span class="accent">Offer</span></h2>
+      <p class="section-subtitle reveal">Learn, build, and grow with our focused programs</p>
+      <div class="neon-divider reveal"></div>
+
+      <div class="offer-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-code"></i></div>
+          <h3>Skill Enhancement</h3>
+          <p>Master languages, frameworks, and architecture through hands-on learning and expert-led workshops.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon"><i class="fas fa-users"></i></div>
+          <h3>Collaborative Projects</h3>
+          <p>Build scalable solutions inside a team — from ideation and design to deployment and launch.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+          <h3>Hackathons & Competitions</h3>
+          <p>Prove your skills in high-stakes environments against the sharpest minds in the game.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= EVENTS ============================= -->
+  <section id="events">
+    <div class="container">
+      <h2 class="section-title reveal">Upcoming <span class="accent">Events</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Don't miss what's coming next</p>
+      <div class="neon-divider reveal reveal-delay-1"></div>
+
+      <div class="events-grid">
+        <!-- Event 1 -->
+        <div class="event-card reveal">
+          <div class="event-date-badge">
+            <i class="far fa-calendar"></i> April 18, 2026
+          </div>
+          <div class="event-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Hackathon Quest</h3>
+          <p>48-hour intensive hackathon. Build real products, win prizes, and connect with industry mentors.</p>
+          <div class="event-tags">
+            <span>Hackathon</span>
+            <span>Node.js</span>
+            <span>Teams</span>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="event-card reveal reveal-delay-1">
+          <div class="event-date-badge">
+            <i class="far fa-calendar"></i> April 23, 2026
+          </div>
+          <div class="event-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Code Battle</h3>
+          <p>Competitive programming showdown. Test your DSA skills across multiple rounds and difficulty levels.</p>
+          <div class="event-tags">
+            <span>Python</span>
+            <span>C++</span>
+            <span>Java</span>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="event-card reveal reveal-delay-2">
+          <div class="event-date-badge">
+            <i class="far fa-calendar"></i> April 30, 2026
+          </div>
+          <div class="event-icon"><i class="fas fa-robot"></i></div>
+          <h3>AI Workshop</h3>
+          <p>Hands-on workshop exploring machine learning, neural networks, and real-world AI applications.</p>
+          <div class="event-tags">
+            <span>AI/ML</span>
+            <span>TensorFlow</span>
+            <span>Open</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= PROJECTS ============================= -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title reveal">Our <span class="accent">Projects</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Explore the creations of CodAstra</p>
+      <div class="neon-divider reveal reveal-delay-1"></div>
+
+      <div class="projects-filter reveal">
+        <button class="active">All</button>
+        <button>Web Dev</button>
+        <button>AI/ML</button>
+        <button>Open Source</button>
+        <button>React</button>
+        <button class="github-btn"><i class="fab fa-github"></i> View GitHub</button>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-icon">⚡</div>
+          <h4>CodeForge</h4>
+          <div class="stack">
+            <span>Node.js</span><span>Express</span><span>MongoDB</span>
+          </div>
+          <a href="#" class="view-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-icon">🚀</div>
+          <h4>AstroGym</h4>
+          <div class="stack">
+            <span>React</span><span>Tailwind</span>
+          </div>
+          <a href="#" class="view-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-icon">🔮</div>
+          <h4>QuantumQuest</h4>
+          <div class="stack">
+            <span>Next.js</span><span>Python</span>
+          </div>
+          <a href="#" class="view-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-icon">📚</div>
+          <h4>EduHub</h4>
+          <div class="stack">
+            <span>Web Dev</span><span>DSA</span><span>Roadmap</span>
+          </div>
+          <a href="#" class="view-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon">🏆</div>
+          <h4>Hackathon Hub</h4>
+          <div class="stack">
+            <span>Node.js</span><span>React</span>
+          </div>
+          <a href="#" class="view-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-icon">🤖</div>
+          <h4>AI Insight</h4>
+          <div class="stack">
+            <span>TensorFlow</span><span>Python</span>
+          </div>
+          <a href="#" class="view-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-icon">🌐</div>
+          <h4>ContribHub</h4>
+          <div class="stack">
+            <span>Next.js</span><span>Open Source</span>
+          </div>
+          <a href="#" class="view-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-icon">🎯</div>
+          <h4>EventSphere</h4>
+          <div class="stack">
+            <span>Event Mgmt</span><span>Node.js</span>
+          </div>
+          <a href="#" class="view-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= TEAM ============================= -->
+  <section id="team">
+    <div class="container">
+      <h2 class="section-title reveal">Our <span class="accent">Team</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Meet the people behind CodAstra</p>
+      <div class="neon-divider reveal reveal-delay-1"></div>
+
+      <!-- Core Team -->
+      <h3 class="team-section-label reveal">Core Team</h3>
+
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-avatar"><i class="fas fa-user-astronaut"></i></div>
+          <h3>Varun Kumar</h3>
+          <div class="team-role">President</div>
+          <div class="team-socials">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-avatar"><i class="fas fa-user-astronaut"></i></div>
+          <h3>Sahil Roy</h3>
+          <div class="team-role">Vice President</div>
+          <div class="team-socials">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-avatar"><i class="fas fa-user-astronaut"></i></div>
+          <h3>Anisha Singh</h3>
+          <div class="team-role">Technical Lead</div>
+          <div class="team-socials">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-3">
+          <div class="team-avatar"><i class="fas fa-user-astronaut"></i></div>
+          <h3>Raj Mehta</h3>
+          <div class="team-role">Events Lead</div>
+          <div class="team-socials">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domain Leads -->
+      <h3 class="team-section-label reveal">Domain Leads</h3>
+
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-avatar"><i class="fas fa-user-ninja"></i></div>
+          <h3>Aditya Agarwal</h3>
+          <div class="team-role">Lead Developer</div>
+          <div class="team-socials">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-avatar"><i class="fas fa-user-ninja"></i></div>
+          <h3>Priya Sharma</h3>
+          <div class="team-role">Content Lead</div>
+          <div class="team-socials">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-avatar"><i class="fas fa-user-ninja"></i></div>
+          <h3>Priya Joshi</h3>
+          <div class="team-role">Content Lead</div>
+          <div class="team-socials">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-3">
+          <div class="team-avatar"><i class="fas fa-user-ninja"></i></div>
+          <h3>Karon Joshi</h3>
+          <div class="team-role">Operations Lead</div>
+          <div class="team-socials">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= JOIN / CTA ============================= -->
+  <section id="join">
+    <div class="container">
+      <div class="join-wrapper">
+        <h2 class="section-title reveal">Ready to <span class="accent">Join?</span></h2>
+        <p class="section-subtitle reveal reveal-delay-1">
+          Unlock your potential. Join the CodAstra community and start building the future today.
+        </p>
+        <div class="join-cta-btns reveal reveal-delay-2">
+          <a href="#" class="btn btn-primary">Apply Now</a>
+          <a href="#" class="btn btn-cyan"><i class="fab fa-discord"></i> Join Discord</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          CodAstra
+          <span>&copy; <span id="footer-year">2026</span> All Rights Reserved.</span>
+        </div>
+        <div class="footer-links">
+          <a href="#"><i class="fab fa-github"></i> GitHub</a>
+          <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="#"><i class="fab fa-discord"></i> Discord</a>
+          <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/particles.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
