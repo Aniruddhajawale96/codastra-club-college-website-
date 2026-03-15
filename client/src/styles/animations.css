@@ -1,0 +1,157 @@
+/*! ========================================
+   CodAstra — Animations & Keyframes
+   ======================================== */
+
+/* ---- Reveal on Scroll ---- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ---- Float ---- */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ---- Glow Pulse ---- */
+@keyframes glowPulse {
+    0%, 100% { box-shadow: var(--glow-cyan); }
+    50% { box-shadow: 0 0 25px rgba(0, 245, 255, 0.5), 0 0 60px rgba(0, 245, 255, 0.2); }
+}
+
+/* ---- Pulse Dot ---- */
+@keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+/* ---- Blink (cursor) ---- */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ---- Float Down (scroll indicator) ---- */
+@keyframes floatDown {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ---- Rotate Background (join CTA) ---- */
+@keyframes rotateBg {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ---- Shimmer ---- */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* ---- Neon Pulse Text ---- */
+@keyframes neonPulseText {
+    0%, 100% { text-shadow: var(--glow-cyan); }
+    50% { text-shadow: 0 0 20px rgba(0, 245, 255, 0.6), 0 0 40px rgba(0, 245, 255, 0.3); }
+}
+
+/* ---- Page Transition ---- */
+.page-transition-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+.page-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.page-transition-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+.page-transition-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease-in;
+}
+
+/* ---- Floating Element (Antigravity) ---- */
+.antigravity-float {
+    animation: float 6s ease-in-out infinite;
+}
+.antigravity-float-slow {
+    animation: float 8s ease-in-out infinite;
+}
+.antigravity-float-fast {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* ---- Glow border on hover ---- */
+.glow-on-hover {
+    transition: var(--transition);
+}
+.glow-on-hover:hover {
+    box-shadow: var(--glow-cyan);
+    border-color: var(--border-glow);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+    .about-content { grid-template-columns: 1fr; gap: 40px; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    section { padding: 100px 0; }
+    #navbar { padding: 0 20px; }
+    .nav-links { display: none; }
+    .nav-mobile-btn { display: flex; }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 0;
+    }
+    .hero-text-col { text-align: center; align-items: center; margin-top: 40px; }
+    .hero-robot-col { height: 350px; grid-row: 1; }
+    .hero-subtitle { margin: 0 auto 20px; }
+    .hero-title { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+    .category-tags { justify-content: center; }
+
+    .offer-grid,
+    .events-grid,
+    .blog-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .cursor-dot, .cursor-ring { display: none; }
+    .join-wrapper { padding: 50px 24px; }
+    .join-form-grid { grid-template-columns: 1fr; }
+    .join-cta-btns { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 480px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
+    .category-tags { gap: 12px; font-size: 0.75rem; }
+}

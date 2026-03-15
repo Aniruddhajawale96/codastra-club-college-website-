@@ -1,0 +1,155 @@
+/*! ========================================
+   CodAstra — Antigravity Design System
+   Design Tokens + Global Reset
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ---- CSS Variables / Design Tokens ---- */
+:root {
+    --bg-primary: #0D0D1A;
+    --bg-secondary: #0a0a0f;
+    --bg-card: rgba(12, 12, 20, 0.7);
+    --bg-card-hover: rgba(20, 20, 35, 0.85);
+    --bg-glass: rgba(15, 15, 25, 0.6);
+
+    --purple: #7B2FBE;
+    --purple-light: #a78bfa;
+    --purple-mid: #8c72f2;
+    --purple-dark: #6c52d2;
+    --cyan: #00F5FF;
+    --cyan-glow: #00d4ea;
+    --neon-blue: #4d7cff;
+    --neon-pink: #ff6bc1;
+    --coral: #FF6B6B;
+    --ghost-white: #F0F0FF;
+
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-dim: rgba(255, 255, 255, 0.4);
+
+    --border-subtle: rgba(140, 114, 242, 0.15);
+    --border-glow: rgba(0, 245, 255, 0.4);
+    --border-purple: rgba(140, 114, 242, 0.4);
+
+    --glow-cyan: 0 0 15px rgba(0, 245, 255, 0.3), 0 0 40px rgba(0, 245, 255, 0.1);
+    --glow-purple: 0 0 15px rgba(123, 47, 190, 0.3), 0 0 40px rgba(123, 47, 190, 0.1);
+    --glow-cyan-sm: 0 0 8px rgba(0, 245, 255, 0.4);
+    --glow-purple-sm: 0 0 8px rgba(123, 47, 190, 0.4);
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-sans: 'Inter', sans-serif;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-pill: 50px;
+
+    --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-fast: all 0.2s ease;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: default;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul { list-style: none; }
+img { max-width: 100%; }
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0D0D1A; }
+::-webkit-scrollbar-thumb {
+    background: var(--purple-dark);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--purple); }
+
+/* ---- Selection ---- */
+::selection {
+    background: rgba(123, 47, 190, 0.4);
+    color: #fff;
+}
+
+/* ---- Layout ---- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+section {
+    padding: 140px 0;
+    position: relative;
+    z-index: 10;
+}
+
+/* ---- Typography ---- */
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.section-title .accent {
+    color: var(--cyan);
+    text-shadow: var(--glow-cyan);
+}
+
+.section-subtitle {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 0.01em;
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---- Neon Divider ---- */
+.neon-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--purple), var(--cyan));
+    border-radius: 2px;
+    margin: 20px auto 40px;
+    box-shadow: 0 0 12px rgba(0, 245, 255, 0.3);
+}
